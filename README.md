@@ -23,8 +23,11 @@ Given an input such as:
   "roles": ["admin", "user"]
 }
 
+```
+
 Tokenizer replaces the leaf values with unique tokens:
 
+```json
 {
 
   "name": "550e8400-e29b-41d4-a716-446655440000",
@@ -42,6 +45,7 @@ Tokenizer replaces the leaf values with unique tokens:
   ]
 
 }
+```
 
 Each replaced value receives a unique token.
 
@@ -147,7 +151,7 @@ Tokenizer recursively traverses JSON and TOML structures.
 Objects and tables are preserved, while leaf values are replaced with generated tokens.
 
 For example:
-
+```json
 {
 
   "database": {
@@ -159,9 +163,9 @@ For example:
   }
 
 }
-
+```
 becomes structurally equivalent to:
-
+```json
 {
 
   "database": {
@@ -173,9 +177,10 @@ becomes structurally equivalent to:
   }
 
 }
+```
 
 Arrays are traversed recursively as well:
-
+```json
 {
 
   "users": [
@@ -189,9 +194,9 @@ Arrays are traversed recursively as well:
   ]
 
 }
-
+```
 becomes:
-
+```json
 {
 
   "users": [
@@ -205,7 +210,7 @@ becomes:
   ]
 
 }
-
+```
 Tokens are generated using UUID version 4.
 
 ---
